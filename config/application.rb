@@ -30,5 +30,6 @@ module Graphql
     end
     config.autoload_paths << Rails.root.join('app', 'graph')
     config.autoload_paths << Rails.root.join('app', 'graph', 'types')
+    config.browserify_rails.commandline_options = '-t [ babelify --plugins "./relay/utils/babelRelayPlugin" ] --extension=".react.jsx"'
   end
 end
