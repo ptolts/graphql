@@ -14,8 +14,17 @@ class BlogApp extends React.Component {
 var BlogRelayContainer = Relay.createContainer(BlogApp, {
   fragments: {
     blog: () => Relay.QL`
-      fragment on Blog {
-        title
+      fragment on Viewer {
+        blogs(first: 10) {
+          edges {
+            node {
+              title
+              author {
+                name
+              }
+            }
+          }
+        }
       }
     `,
   },

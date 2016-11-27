@@ -1,10 +1,13 @@
 var Relay = require('react-relay');
 var BlogRelayRoute = {
   queries: {
-    blog: () => Relay.QL` query { blog(id: $id) } `,
+    blog: () => Relay.QL`
+    query {
+      root
+    } `,
   },
   params: {
-    id: '1'
+    first: '10'
   },
   name: 'BlogHomeRoute',
 }

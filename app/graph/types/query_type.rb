@@ -10,4 +10,8 @@ QueryType = GraphQL::ObjectType.define do
       Blog.find(args[:id])
     }
   end
+
+  field :root, ViewerType do
+    resolve -> (obj, args, ctx) { Viewer::STATIC }
+  end
 end
